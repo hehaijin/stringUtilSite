@@ -19,4 +19,30 @@
 </div>
 <br>
 <button mat-raised-button color='primary'(click)='clearInput()'>clear</button>
+
+
+<br>
+<br>
+<br>
+<br>
+<h3>SQL insert values conversion </h3>
+<p> transform a json array to values format</p>
+<div fxLayout='row' fxLayoutGap='20px'>
+  <div fxFlex='40%'>
+    <p>Input</p>
+    <textarea style='background-color:#f2f2f2;width:100%' matInput matTextareaAutosize matAutosizeMinRows=10
+      matAutosizeMaxRows=50 [formControl]='inputControlValues'></textarea>
+  </div>
+  <div fxFlex='40%'>
+    <p>Output</p>
+
+    <textarea style='background-color:#f2f2f2;width:100%' matInput matTextareaAutosize matAutosizeMinRows=10
+      matAutosizeMaxRows=50 [formControl]='outputControlValues'> </textarea>
+
+  </div>
+  
+</div>
+<br>
+<button mat-raised-button color='primary'(click)='clearInputValues()'>clear</button>
+
 </div>

@@ -12,11 +12,21 @@ export class AppComponent {
   title = 'stringUtilSite';
   inputControl = new FormControl();
   outputControl = new FormControl();
+  inputControlValues = new FormControl();
+  outputControlValues = new FormControl();
+
   constructor() {
     this.inputControl.valueChanges.pipe(map(this.doubleQuoteToSingle))
       .subscribe(
         value => {
           this.outputControl.setValue(value);
+        }
+      );
+
+    this.inputControlValues.valueChanges.pipe(map(this.ValuesTransform))
+      .subscribe(
+        value => {
+          this.outputControlValues.setValue(value);
         }
       );
   }
@@ -27,7 +37,14 @@ export class AppComponent {
     return tempS2;
   }
 
+  ValuesTransform(input: string) {
+    // const inputjson = JSON.parse(input);
+    return input;
+  }
   clearInput() {
     this.inputControl.setValue('');
+  }
+  clearInputValues() {
+    this.inputControlValues.setValue('');
   }
 }
